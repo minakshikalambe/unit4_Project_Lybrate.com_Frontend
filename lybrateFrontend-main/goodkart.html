@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodKart - Buy Health Care Products Online at Best Prices in India | Lybrate</title>
+    <link rel="icon" sizes="192*192" href="https://nu.lybcdn.com/img/push-crew/logo_192_by_192.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/styles/goodkart.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/slider.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+
+
+<body>
+    <div id="container">
+
+        <!-- Header Start -->
+
+        <header id="header">
+
+        </header>
+
+        <!-- Header End -->
+
+
+        <!-- Slider Start -->
+
+        <div id="slider">
+
+        </div>
+
+
+        <!-- Slider End -->
+
+
+        <!-- content i.e. e-commerce items appended in the content div-->
+
+        <div id="content">
+            <div id="goldBox">
+                <div>Exclusively for <b>gold</b> Members</div>
+                <div id="item">
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_250,h_250,c_pad,b_rgb:ffffff/rio/drvaidyas/dvmp/Rumox1.jpg"
+                            alt="">
+                        <p>Muscle & Joint Pain Relief Balm</p>
+                        <div class="priceBox">
+                            <p>₹1</p>
+                            <s>₹125</s>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_250,h_250,c_pad,b_rgb:ffffff/rio/800x800/Herbocool.webp"
+                            alt="">
+                        <p>Herbocool: Ayurvedic Hair Oil</p>
+                        <div class="priceBox">
+                            <p>₹1</p>
+                            <s>₹200</s>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="protein">
+                <div>Best In Protein & Fitness - Your Workout Buddies</div>
+                <div class="best">
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_250,h_250,c_pad,b_rgb:ffffff/rio/drvaidyas/dvmp/Rumox1.jpg"
+                            alt="">
+                        <p>Muscle & Joint Pain Relief Balm</p>
+                        <div class="pr">
+                            <p>₹1</p>
+                            <s>₹125</s>
+                            <button>add to vart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_250,h_250,c_pad,b_rgb:ffffff/rio/drvaidyas/dvmp/Rumox1.jpg"
+                            alt="">
+                        <p>Muscle & Joint Pain Relief Balm</p>
+                        <div class="pr">
+                            <p>₹1</p>
+                            <s>₹125</s>
+                            <button>add to vart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_250,h_250,c_pad,b_rgb:ffffff/rio/drvaidyas/dvmp/Rumox1.jpg"
+                            alt="">
+                        <p>Muscle & Joint Pain Relief Balm</p>
+                        <div class="pr">
+                            <p>₹1</p>
+                            <s>₹125</s>
+                            <button>add to vart</button>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_250,h_250,c_pad,b_rgb:ffffff/rio/drvaidyas/dvmp/Rumox1.jpg"
+                            alt="">
+                        <p>Muscle & Joint Pain Relief Balm</p>
+                        <div class="pr">
+                            <p>₹1</p>
+                            <s>₹125</s>
+                            <button>add to vart</button>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+           
+            <div class="card">
+                <img src="https://assets.lybrate.com/q_auto:low,f_auto,w_600//rio/800x800/product_banner_01.jpg" alt="">
+            </div>
+            <div class="card"><img src="https://assets.lybrate.com/q_auto:low,f_auto,w_600//rio/800x800/banner-COVID-19-Protection-Kit_01.jpg" alt=""></div>
+            <div class="card"><img src="https://assets.lybrate.com/q_auto:low,f_auto,w_600//rio/800x800/banner_Fitness-Supplement-Products_02.jpg" alt=""></div> -->
+
+
+        </div>
+
+
+        <!-- information paragraph starts -->
+        <div id="info">
+
+
+        </div>
+        <!-- information paragraph ends -->
+
+        <!-- Footer starts -->
+
+       
+
+
+
+
+
+
+    </div>
+    <footer class="footer" id="footer"></footer>
+
+
+</body>
+
+</html>
+<script type="module">
+   
+   import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer();
+ import goodKartInfo from "./components/goodKartInfo.js";
+
+import {goodkartHeader,  slide, responsiveSlider} from "./components/goodkartHeaderAndSlider.js";
+
+import dropDown from "./scripts/dropDown.js";
+
+import authenticate from "./scripts/loginauhentication.js";
+
+
+let cartArr=JSON.parse(localStorage.getItem("cartArr"))||[];
+
+
+
+document.getElementById("info").innerHTML=goodKartInfo();
+
+
+let header = document.getElementById("header");
+
+header.innerHTML = goodkartHeader();
+let cartdiv=document.getElementById("cartdiv");
+console.log(cartArr.length)
+let cartsize=document.createElement("div");
+cartsize.id="cartsize";
+cartsize.textContent=`${cartArr.length}`
+cartdiv.append(cartsize)
+
+dropDown();
+
+authenticate();
+// // console.log(authenticate())
+
+
+
+let slider = async ()=>{
+    try{
+        let res = await fetch("https://apilybrate.herokuapp.com/sliders");
+        let data =await res.json();
+        return data
+
+    }catch(err){
+        console.log(err)
+    }
+}
+let sliderArr=await slider();
+
+let slide_div = document.getElementById("slider")
+
+slide(slide_div,sliderArr);
+
+responsiveSlider();
+
+
+let goodkart = async ()=>{
+    try{
+        let res = await fetch("https://apilybrate.herokuapp.com/goodKarts");
+        let data =await res.json();
+       return data.goodKarts
+
+    }catch(err){
+        console.log(err)
+    }
+}
+let mainArr =await goodkart()
+
+
+let image = async ()=>{
+    try{
+        let res = await fetch("https://apilybrate.herokuapp.com/imagearrs");
+        let data =await res.json();
+       return data
+
+    }catch(err){
+        console.log(err)
+    }
+}
+let imageArr =await image()
+
+let j;
+for(let i=0; i<mainArr.length; i++){
+    let div = document.createElement("div");
+    div.setAttribute("class","contentBox");
+
+    let title = document.createElement("div");
+    title.innerText= mainArr[i].title;
+
+
+    let card = document.createElement("div");
+    card.setAttribute("class","itemsBox");
+
+    mainArr[i].arr.map((el)=>{
+
+        let div1= document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = el.img;
+
+        let name = document.createElement("p");
+        name.innerText = el.name;
+
+        let price_div = document.createElement("div");
+        price_div.setAttribute("class","priceBox");
+
+        let price =document.createElement("p");
+        price.innerText= `₹${el.price}`;
+        let stprice = document.createElement("s");
+        stprice.innerText= `₹${el.stprice}`;
+
+        let btn = document.createElement("button");
+            btn.innerText = "Add to Cart"
+            btn.addEventListener("click", ()=>{
+                addToCart(el);
+            })
+            price_div.append(price,stprice,btn);
+        
+            div1.append(img,name,price_div)
+
+            card.append(div1);
+
+
+
+    })
+    div.append(title, card );
+
+    document.getElementById("content").append(div)
+
+    
+
+    if(i==0 || i == 2 || i==6){
+        if(i==0){
+            j=0;
+        }else if(i==2){
+            j=1;
+        }else{
+            j=2;
+        }
+        imageArr[j].arr.map((el)=>{
+            let div_image= document.createElement("div");
+            div_image.setAttribute("class","card");
+            let img = document.createElement("img");
+  
+            img.src = el.img;
+            div_image.append(img);
+            
+            document.getElementById("content").append(div_image)
+        })
+
+
+       
+    }
+}
+
+let addToCart = (el)=>{
+
+    cartArr=JSON.parse(localStorage.getItem("cartArr"))||[];
+
+    cartArr.push(el);
+    localStorage.setItem("cartArr",JSON.stringify(cartArr));
+    
+    cartsize.textContent=`${cartArr.length}`
+   
+}
+
+</script>

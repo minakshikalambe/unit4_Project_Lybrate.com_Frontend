@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0px;
+    width: 100vw;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+#container {
+    /* border: 1px solid black; */
+    background-color: #eeeeee;
+    height: auto;
+
+    /* margin: 0 4.5rem; */
+}
+
+
+
+
+
+#content{
+    /* border: 1px solid red; */
+    height: auto;
+    margin: 0 4.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+#goldBox{
+    width: 46%;
+    height: 670px;
+    /* border: 1px solid black; */
+    margin: 5px auto;
+    padding: 10px;
+    background-color: #dd7764;
+    opacity: 0.3;
+    
+}
+
+#goldBox>div:nth-child(1){
+    margin-bottom: 20px;
+    color: black;
+    background-color: #dd7764;
+    opacity: 1 ;
+}
+
+#item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid green; */
+    
+}
+#item>div{
+    margin: 1px;
+    background-color: white;
+    width: 100%;
+    height: 630px;
+    
+
+}
+#item>div>img{
+    width: 190px;
+    height: 190px;
+    padding-top: 40%;
+}
+#item>div>p{
+    font-weight: 700;
+}
+.priceBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+.priceBox>p{
+    margin: 10px;
+    color: red;
+    font-weight: 700;
+    font-size: larger;
+
+}
+.priceBox>s{
+    font-weight: 300;
+    font-size:small;
+    color: gray;
+}
+
+
+.contentBox{
+    width: 48%;
+    height: 692px;
+    /* border: 1px solid black; */
+    margin: 5px auto;
+    /* padding: 10px; */
+    /* background-color: white; */
+}
+.contentBox>div:nth-child(1){
+    padding: 10px;
+    padding-bottom: 20px;
+    color: black;
+    opacity: 1 ;
+    /* font-size: 16px; */
+    background-color: white;
+    border-bottom: 1px solid rgb(158, 158, 158,0.4);
+}
+.itemsBox{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 2px;
+    /* border: 1px solid green; */
+    
+}
+.itemsBox>div{
+    /* margin: 1px; */
+    background-color: white;
+    width: 100%;
+    height: 320px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    
+
+}
+.itemsBox>div>p{
+    text-align: center;
+    display: inline-block;
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 230px;
+    font-weight: 700;
+
+}
+.itemsBox>div>img{
+    width: 190px;
+    height: 190px;
+}
+.priceBox>button{
+    margin: 10px;
+    border: 1px solid #dd7764;
+    background-color: white;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 5px;
+}
+.priceBox>button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #dd7764;
+    transition: all 500ms ease-in;
+}
+
+.card>img{
+    width: 390px;
+    height: 230px;
+    margin: 8px;
+}
+
+
+  #info{
+    padding: 0 4.5rem;
+  }

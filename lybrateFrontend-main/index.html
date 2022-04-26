@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/lybrate_icon_325x325.png" type="image/x-icon">
+    <link rel="stylesheet" href="./fontawesome-free-5.12.1-web/css/all.min.css">
+    
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Online Doctor | Ask a doctor Online | Lybrate</title>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar" id="navBar">
+      
+        
+    </nav>
+    <!-- end of navbar -->
+    <!-- header -->
+    <header class="header">
+        <div class="banner">
+            <p>Stay at Home. Consult Doctors Online. 
+                <strong> #IndiaFightsCorona.</strong>
+            </p>
+            <div class="input-box">
+                <input type="text" id="search-box" placeholder="Search for any health keyword">
+                <button id="input-box-btn"><h3>Search</h3></button>
+            </div>
+            <div class="header-tags">
+                <span>Trending Topics : </span>
+                <a href="#">COVID-19</a>
+                <a href="#">Black Fungus</a>
+                <a href="#">Dengue Fever</a>
+                <a href="#">Asthama</a>
+                <a href="#">Infertility</a>
+                <a href="#">Diabetes</a>
+                <a href="#">Dehydration</a>
+            </div>
+            <div id="ticker-data">
+                <span id="ticker-data-timing"></span>
+                <span id="ticker-data-info"></span>
+            </div>
+        </div>
+        <div id="home-booknow-strip">
+            <p>Coronavirus - Know all about it , watch doctor videos and track numbers around world
+                <button><h2>KNOW MORE</h2></button>
+            </p>
+        </div>
+    </header>
+    <!-- end of header -->
+    <!-- dropdown-menu -->
+    <div id="subheader-container">
+        <div id="sub-header">
+            <div class="subheader-action">
+                <span>Diet,Food & Fitness</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}"
+                        d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+            <div class="subheader-action">
+                <span>Skin & Hair Care</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+            <div class="subheader-action">
+                <span>Health Conditions</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+            <div class="subheader-action">
+                <span>Pregnancy,Kids & Parenting </span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+            <div class="subheader-action">
+                <span>Women's Health</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+            <div class="subheader-action">
+                <span>Sexual Wellness</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+            <div class="subheader-action">
+                <span>More</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="14" preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 24 24">
+                    <path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <!-- end of dropdown menu -->
+    <!-- home section !-->
+    <div id="home-section">
+        <div class="home-container">
+            <div class="title-section">
+                <h2>Questions and Answers</h2>
+                <h6>
+                    <img style="vertical-align: middle "
+                        src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" alt="">
+                    <strong>10 million+</strong> questions and answers by doctor
+                </h6>
+            </div>
+            <div class="quesAns">
+                <div class="quesHalf">
+                    <div class="hoverable-qna-card">
+                        <img src="./assets/QnA-01.webp" alt="">
+                        <div class="card-header">
+                            <p>My daughter is suffering from pcod with hypo thyroid she is married before 10 ....</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-picture">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/d9653fdd50eff6118d53852653226396/Gynaecology-PoojaChoudhary-Ghaziabad-118cfd.jpg"
+                                    alt="">
+                                <div class="profile">
+                                    <div class="profile-top">
+                                        Pooja Chaudhary
+                                    </div>
+                                    <div class="profile-bottom">
+                                        Gynaecologist,Noida
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Weight reduction and diet management are the keys to managing PCOD.In PCOD ovulation doesn't occur so she will be needing drugs for ovulation induction....</p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="fas fa-thin fa-heart"></i></span>
+                            <span><i class="fas fa-thin fa-bookmark"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quesHalf">
+                    <div class="hoverable-qna-card">
+                        <img src="./assets/QnA-02.webp" alt="">
+                        <div class="card-header">
+                            <p>We have two girls and don't want another child but last month my wife missed....</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-picture">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/637896454fa3fc0f4b0f7fb11e08f8d0/Gynaecology-NeelimaPadmanaban-Bangalore-8adfea"
+                                    alt="">
+                                <div class="profile">
+                                    <div class="profile-top">
+                                        Dr Ishwar Chandra Rai
+                                    </div>
+                                    <div class="profile-bottom">
+                                        Ayurveda,Agra
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Consult a doc for medication to get your periods once you get your periods then you can discuss about contraceptive
+                            options.....</p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="fas fa-thin fa-heart"></i></span>
+                            <span><i class="fas fa-thin fa-bookmark"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quesHalf">
+                    <div class="hoverable-qna-card">
+                        <img src="./assets/QnA-03.webp" alt="">
+                        <div class="card-header">
+                            <p>I am a 22 years old young guy. I finished my ug degree in engineering this year only. ...</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-picture">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/88d6f1ee17fb2672a3ac23516fa04af0/Psychology-SaulPereira-Bangalore-99eb07.jpg"
+                                    alt="">
+                                <div class="profile">
+                                    <div class="profile-top">
+                                        Dr Saul Pareira
+                                    </div>
+                                    <div class="profile-bottom">
+                                        Psycologist, Bangalore
+                                    </div>
+                                </div>
+                            </div>
+                            <p>I am sorry that your father abandoned you and mom in childhood. This is certainly having a great impact on you. Your
+                            anger towards your father is causing you too much distress and....</p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="fas fa-thin fa-heart"></i></span>
+                            <span><i class="fas fa-thin fa-bookmark"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quesHalf">
+                    <div class="hoverable-qna-card">
+                        <img src="./assets/QnA-04.webp" alt="">
+                        <div class="card-header">
+                            <p>I have had health anxiety for over 6 months now. I been to various doctors but ...</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-picture">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/380caf40f4b70f9f353f156b626bb788/Psychiatry-PrasenjitRay-Burdwan-0440a2.png"
+                                    alt="">
+                                <div class="profile">
+                                    <div class="profile-top">
+                                        Dr Prasenjit Ray
+                                    </div>
+                                    <div class="profile-bottom">
+                                        Psychiatrist,Burdwan
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Weight reduction and diet management are the keys to managing PCOD.In PCOD ovulation doesn't occur so she
+                                will be needing drugs for ovulation induction....</p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="fas fa-thin fa-heart"></i></span>
+                            <span><i class="fas fa-thin fa-bookmark"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quesHalf">
+                    <div class="hoverable-qna-card">
+                        <img src="./assets/QnA-05.webp" alt="">
+                        <div class="card-header">
+                            <p>Hi doctor, I am trying for pregnancy.I have diagnosed with pcos.So I a....</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-picture">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/c2b3cbdef302aeab2aff7e71bd2edcbe/Psychology-SenthilkumarL-Bangalore-5ee096.jpg"
+                                    alt="">
+                                <div class="profile">
+                                    <div class="profile-top">
+                                        Mr Senthilkumar L
+                                    </div>
+                                    <div class="profile-bottom">
+                                        Psycologist,Bangalore
+                                    </div>
+                                </div>
+                            </div>
+                            <p>My age is almost 34 I got married in last year. Before marriage my sexual health used to be strong I mean my erect was
+                            very hard and used to be for long time،, sometime....</p>
+                        </div>
+                        <div class="card-footer">
+                            <span><i class="fas fa-thin fa-heart"></i></span>
+                            <span><i class="fas fa-thin fa-bookmark"></i></span>
+                        </div>
+                    </div>
+                    <button id="qna-btn">
+                        View More Questions & Answers
+                    </button>
+                </div>
+                <div class="quesHalf">
+                    <div class="hoverable-qna-card">
+                        <div id="form">
+                            <div id="form-header">
+                                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" alt="">
+                                <div>Ask a question</div>
+                            </div>
+                            <textarea name="message" style="flex-grow:1;"
+                                placeholder="Enter question for you or someone else. E.g. my left eye is red and swollen" required="">
+                            </textarea>
+                            <div class="form-footer">
+                                <span>Submit Anonymously</span>
+                                <button type="submit" id="footer-submit-btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of home-section -->
+    <!-- health-card-section -->
+        <section class="health-card">
+            <div class="health-card-container">
+                <div class="health-title">
+                    <h2>Health tips</h2>
+                    <h6>Prevent and manage health issues better</h6>
+                </div>
+                <div class="health-img-cont">
+                    <div class="health-img">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_400,w_700,g_auto,c_fill/eagle/uploads/6e67eaf22dedfbabc6fa671cd0584385/e3dec4.jpg" alt="">
+                        <div class="feature-tip">
+                            <h3>Panic Disorder - How can it affect you?</h3>
+                            <p>Panic disorder or panic attacks are common among people.We have come across this term many times before in lives. Sothis article will deal with  panic attacks and more about them.</p>
+                            <div class="feature-footer">
+                                <a href="#">Read More</a>
+                                <span>
+                                    <span><i class="fas fa-thin fa-heart"></i></span>
+                                    <span><i class="fas fa-thin fa-bookmark"></i></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="health-card-left">
+                        <div class="health-card-tips">
+                            <!--  tip -->
+                            <div class="tip">
+                                <div class="profile-pic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/235e1b2f360536a821e03e6099e122fd/Psychiatry-GouravGupta-Delhi-5d2ad3" alt="">
+                                </div>
+                                <div class="profile-text">
+                                    <h3>Panic Disorder - How can it affect you</h3>
+                                    <span>Dr Gaurav Gupta , Psychiatrist</span>
+                                </div>
+                            </div>
+                            <!-- end of tip -->
+                            <!--  tip -->
+                            <div class="tip">
+                                <div class="profile-pic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/ab0da355d2dbb31ba15d9ccec961c576/Gynaecology-ShwetaGoswami-Gurgaon-a7c2b2.JPG"
+                                        alt="">
+                                </div>
+                                <div class="profile-text">
+                                    <h3>Role of quality eggs in IVF treatment</h3>
+                                    <span>Dr Shweta Goswami , IVF Specialist</span>
+                                </div>
+                            </div>
+                            <!-- end of tip -->
+                            <!--  tip -->
+                            <div class="tip">
+                                <div class="profile-pic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/88714a2bec4c066ac25f3b14be79f61a/Psychology-AtikaShukla-noida-8585bb.JPG"
+                                        alt="">
+                                </div>
+                                <div class="profile-text">
+                                    <h3>10 Things to know about Adolescent Anxiety</h3>
+                                    <span>Ms. Atika shukla , Psycologist</span>
+                                </div>
+                            </div>
+                            <!-- end of tip -->
+                            <!--  tip -->
+                            <div class="tip">
+                                <div class="profile-pic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/9f2f380674a269bdd2bd89041923d96f/Ear-Nose-Throat-ENT--SarikaVerma-Gurgaon-36e824.jpg"
+                                        alt="">
+                                </div>
+                                <div class="profile-text">
+                                    <h3>Allergy testing by Skin Prick Method</h3>
+                                    <span>Dr Sarika Verma, ENT Specialist</span>
+                                </div>
+                            </div>
+                            <!-- end of tip -->
+                            <!--  tip -->
+                            <div class="tip">
+                                <div class="profile-pic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/47d964cef8a31bf3c2ef4eb8f1848816/Dermatology-SatishTitoria-Noida-4eb8e0"
+                                        alt="">
+                                </div>
+                                <div class="profile-text">
+                                    <h3>A brief insight into Scabbies,its causes and its treatment</h3>
+                                    <span>Dr Satish Titoria, Dermatologist</span>
+                                </div>
+                            </div>
+                            <!-- end of tip -->
+                            
+                        </div>
+                        <button id="health-btn">
+                            View more health tips
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- end of health-card-section -->
+    <section class="videos-section">
+        <div class="video-container">
+            <div class="video-title">
+                <h2>Videos</h2>
+                <h6>Top doctors explain the compex health issues</h6>
+            </div>
+            <div class="videos-images">
+                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/7cdb8a7f506aa650955e2c9bac9dcd5a/50cb5d.png" alt="">
+                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/b0bd7ee92bd699324916ff8041c8ef95/0ba1b8.png" alt="">
+                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/af6adc78786f5296fd61a27d094c3ede/c3298e.png" alt="">
+                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/b0bd7ee92bd699324916ff8041c8ef95/b88489.png" alt="">
+            </div>
+        </div>
+        <div class="video-cards">
+
+        </div>
+    </section>
+    <!-- info -->
+    <section class="info">
+        <div class="info-container">
+            <div class="info-title">Are you a doctor ?</div>
+            <div class="info-content">
+                Be a part of the next big thing in healthcare. Join us in our journey of revolutionizing healthcare delivery by
+                harnessing technology to help millions lead healthier lives.
+            </div>
+            <button class="info-btn">Know More</button>
+        </div>
+    </section>
+    <!-- end of info -->
+    <!-- cateogary -->
+    <section class="cateogary">
+        <!-- top-cateogaries -->
+        <div class="cateogaries-container">
+            <div class="cateogaries-title">
+                <h2>Top Categories</h2>
+            </div>
+            <div class="cateogaries-images">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/dietitian-nutritionist.jpg" alt="">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/gynaecologist.jpg" alt="">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/psychologist.jpg" alt="">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/dermatologist.jpg" alt="">
+            </div>
+        </div>
+        <!-- end of top cateogaries -->
+        <!-- top-cities -->
+        <div class="cities-container">
+            <div class="cities-title">
+                <h2>Top Cities</h2>
+            </div>
+            <div class="cities-images">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/delhi_city.jpg" alt="">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/bangalore_city.jpg" alt="">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/mumbai_city.jpg" alt="">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/kolkata_city.jpg" alt="">
+            </div>
+        </div>
+        <!-- end of top-cities -->
+    </section>
+    <!-- end of cateogary -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-title">About Lybrate</div>
+            <div class="about-content">
+                <p>Are you looking for a simple way to get the best medical care available? Lybrate.com innovative online doctor database
+                gives you access to over 150,000 highly trained medical experts. So you can ask a doctor anything you want, simple with
+                a touch of a finger. You can save as much as 70% of your time and money at your next visit to the doctor and with the
+                assurance that the medical professional you are seeing is highly trained and experienced. We use a stringent
+                verification process to ensure you are 100% satisfied every time. Subscribe to the Lybrate Online Doctor network today
+                to get the very best access to free questions, consultations and easy appointments. Join today!</p>
+                <p>Looking to ask a doctor questions about your health online? Lybrate offers a fast, easy and friendly way to gain access
+                to general practitioners, dieticians, nutritionists, gynaecologists, psychologist, dermatologist, sexologist, ayurveda,
+                homeopathy and more. You can get in touch with online doctors 24 hours a day, 7 days a week with this simple
+                application. No matter what your condition, Lybrate can get you in touch with a doctor online straight away. To find out
+                more, subscribe to our ask a doctor service online or download the app and get access to doctors on the go!</p>
+                <p>Not only does Lybrate give you access to online medical professionals, we also have regular blogs from respected experts
+                that give you tips and advice on health and well being. Our doctors discuss a range of topics from everyday living,
+                parenting, pregnancy and how to manage your conditions, all online and accessible from your computer, phone or tablet.
+                Simply download the app and get access to free questions, consultations and easy appointments. Get your health feed now
+                with Lybrate and ask a doctor what you've always wanted to know!</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="left">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <ul class="unstyled">
+                                <li class="section-title">DELHI</li>
+                                <li><a href="#">Dentist in Delhi</a></li>
+                                <li><a href="#">General Physicians in Delhi</a></li>
+                                <li><a href="#">Cardologists in Delhi</a></li>
+                                <li><a href="#">Gynaecologists in Delhi</a></li>
+                                <li><a href="#">Psychiatrists in Delhi</a></li>
+                                <li><a href="#">Dermatologists in Delhi</a></li>
+                                <li><a href="#">Neurologists in Delhi</a></li>
+                                <li><a href="#">Urologists in Delhi</a></li>
+                                <li><a href="#">Ophthalmologist in Delhi</a></li>
+                                <li><a href="#">Sexologists in Delhi</a></li>
+                            </ul>
+                        </div>
+                        <div class="span3">
+                            <ul class="unstyled">
+                                <li class="section-title">MUMBAI</li>
+                                <li><a href="#">Dentist in Mumbai</a></li>
+                                <li><a href="#">General Physicians in Mumbai</a></li>
+                                <li><a href="#">Cardologists in Mumbai</a></li>
+                                <li><a href="#">Gynaecologists in Mumbai</a></li>
+                                <li><a href="#">Psychiatrists in Mumbai</a></li>
+                                <li><a href="#">Dermatologists in Mumbai</a></li>
+                                <li><a href="#">Neurologists in Mumbai</a></li>
+                                <li><a href="#">Urologists in Mumbai</a></li>
+                                <li><a href="#">Ophthalmologist in Mumbai</a></li>
+                                <li><a href="#">Sexologists in Mumbai</a></li>
+                            </ul>
+                        </div>
+                        <div class="span3">
+                            <ul class="unstyled">
+                                <li class="section-title">CHENNAI</li>
+                                <li><a href="#">Dentist in Chennai</a></li>
+                                <li><a href="#">General Physicians in Chennai</a></li>
+                                <li><a href="#">Cardologists in Chennai</a></li>
+                                <li><a href="#">Gynaecologists in Chennai</a></li>
+                                <li><a href="#">Psychiatrists in Chennai</a></li>
+                                <li><a href="#">Dermatologists in Chennai</a></li>
+                                <li><a href="#">Neurologists in Chennai</a></li>
+                                <li><a href="#">Urologists in Chennai</a></li>
+                                <li><a href="#">Ophthalmologist in Chennai</a></li>
+                                <li><a href="#">Sexologists in Chennai</a></li>
+                            </ul>
+                        </div>
+                        <div class="span3">
+                            <ul class="unstyled">
+                                <li class="section-title">BANGALORE</li>
+                                <li><a href="#">Dentist in Bangalore</a></li>
+                                <li><a href="#">General Physicians in Bangalore</a></li>
+                                <li><a href="#">Cardologists in Bangalore</a></li>
+                                <li><a href="#">Gynaecologists in Bangalore</a></li>
+                                <li><a href="#">Psychiatrists in Bangalore</a></li>
+                                <li><a href="#">Dermatologists in Bangalore</a></li>
+                                <li><a href="#">Neurologists in Bangalore</a></li>
+                                <li><a href="#">Urologists in Bangalore</a></li>
+                                <li><a href="#">Ophthalmologist in Bangalore</a></li>
+                                <li><a href="#">Sexologists in Bangalore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="section-title">Lybrate.com</div>
+                    <div>
+                        <ul class="unstyled">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Mobile Apps</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Editorial Policy</a></li>
+                            <li><a href="#">Press</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="footer-outer">
+                <div class="left">
+                    <a href="#">City Index</a>
+                    <a href="#">Locality City Index</a>
+                    <a href="#">Speciality Index</a>
+                    <a href="#">Speciality City Index</a>
+                    <a href="#">Health Wiki</a>
+                    <a href="#">Health Tips Index</a>
+                    <a href="#">Health Questions Index</a>
+                    <a href="#">Health Quizzes Index</a>
+                    <a href="#">Health Topics Index</a>
+                    <a href="#">Medicines Index</a>
+                    <a href="#">Ailment Index</a>
+                    <a href="#">Health Packages</a>
+                    <a href="#">Lab Test Details Index</a>
+                    <a href="#">Treatment Pages Index</a>
+                    <a href="#">Patient Support Programs</a>
+                    </ul>
+                </div>
+                <div class="right">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="copyright">
+                <span>&copy;</span> Lybrate,Inc. All rights reserved
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script type="module">
+    
+    import {indexNavbar} from "./components/index_navbar.js"
+   document.getElementById("navBar").innerHTML = indexNavbar();
+   
+    var timer_arr = ["7 mins", "4 mins", "8 mins", "3 mins"]
+
+var info_arr = ["20 year old male from Aligarh asked about pimples", "40 year old female from Daman asked about chest pain", "23 year old male from Bangalore just asked about weight loss ", "26 year old female from Chennai just asked about migrane"];
+
+let timer_id = document.getElementById('ticker-data-timing');
+let info_id = document.getElementById('ticker-data-info');
+
+function timerAndInfo() {
+    let i = 0;
+    setInterval(function () {
+        
+        if (i == 3) {
+            i = 0;
+        }
+
+        timer_id.textContent = timer_arr[i];
+        info_id.textContent = info_arr[i];
+
+        i = i + 1;
+    },2000)
+}
+
+timerAndInfo();
+</script>

@@ -1,0 +1,204 @@
+
+body{
+    margin: 0;
+    padding: 0px;
+}
+
+
+/* Header Start */
+
+#header {
+    width: inherit;
+    /* border: 1px solid black; */
+    height: 5.5rem;
+    font-size: 14px;
+   
+}
+
+#navbar {
+    /* border: 1px solid red; */
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 4.5rem; */
+    padding:  0px 10px;
+    padding: 0 4.5rem;
+    background-color: #ffffff;
+}
+
+
+
+#logo {
+    /* border: 1px solid red; */
+    width: fit-content;
+}
+
+#logo>img {
+    height: 2.25rem;
+}
+
+#searchbar {
+    /* border: 1px solid green; */
+    width: 30rem;
+    height: 2.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    background-color: #dedede;
+
+}
+
+#search {
+    width: 92%;
+    height: 1.8rem;
+    margin: 0;
+    padding: 0px;
+    border: solid transparent;
+    background-color: #dedede
+}
+
+#search::placeholder {
+    color: rgb(165, 165, 165);
+    padding-left: 0.5rem;
+}
+
+#searchbar button,
+#searchbar i {
+    border: 0;
+    background-color: #dedede;
+    cursor: pointer;
+    
+}
+
+#signInDrop {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1;
+    transform: translate(-60%,0%)
+    
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#signInDrop:hover .dropdown-content {
+    display: block;
+}
+#LybrateCash{
+    display: flex;
+    align-items: center;
+    
+}
+#LybrateCash>img{
+    margin-right:3px;
+}
+#homebtn>a>button{
+    background-color: white;
+    border: 1px solid;
+    padding: 2px 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#cart{
+    color: #dd7764;
+    background: transparent;
+    
+}
+
+#category {
+    /* border: 1px solid red; */
+    background-color: black;
+    color: white;
+    height: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0 4.5rem;
+}
+#category>div{
+    display: flex;
+    align-items: center;
+}
+
+#shopbyCat,#sexualWell,#food, #vitamin, #weight,#childcare {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    /* box-sizing: border-box; */
+    /* border: 1px solid yellow; */
+    height: inherit;
+    
+    
+    
+}
+#shop-dropdown , #wellness-drop, #food-drop,#vitamin-drop, #weight-drop,#childcare-drop{
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1;
+    transform: translate(0%,55%);
+    
+    
+}
+#wellness-drop{
+    transform: translate(0%,70%);
+}
+#vitamin-drop {
+    transform: translate(0%,53%);
+}
+#weight-drop{
+    transform: translate(0%,63%);
+}
+#childcare-drop{
+    transform: translate(-60%,58%);
+}
+#shop-dropdown a , #wellness-drop a, #food-drop a, #vitamin-drop a, #weight-drop a,#childcare-drop a{
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(158, 158, 158,0.4);
+    
+}
+#shop-dropdown a:hover , #wellness-drop a:hover, #food-drop a:hover, #vitamin-drop a:hover, #weight-drop a:hover,#childcare-drop a:hover{
+    background-color: gray;
+}
+
+#shopbyCat:hover #shop-dropdown , #sexualWell:hover #wellness-drop, #food:hover #food-drop, #vitamin:hover #vitamin-drop, #weight:hover #weight-drop , #childcare:hover #childcare-drop{
+    display: block;
+    
+    
+}
+#cartsize{
+    border: 1px solid;
+    text-align: center;
+    width: 17px;
+    height: 17px;
+    background-color: #dd7764;
+    color: white;
+    border-radius: 50%;
+    margin: -40px 0px 0px 10px ;
+}
+
+/* Header End */

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="192*192" href="https://nu.lybcdn.com/img/push-crew/logo_192_by_192.png">
+    <link rel="stylesheet" href="./styles/viewcart.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>https://www.lybrate.com/viewcart</title>
+</head>
+<body>
+    <header id="header">
+
+    </header>
+    <div id="container">
+        
+        <div id="leftBox"></div>
+        <div id="rightBox">
+            
+           
+        </div>
+    </div>
+    <div id="rightBox">
+            
+           
+    </div>
+    <footer class="footer" id="footer"></footer>
+</body>
+</html>
+
+<script type="module">
+    import {goodkartHeader} from "./components/goodkartHeaderAndSlider.js"
+    // document.getElementById("navbar").innerHTML=navbar();
+    import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer();
+// import navbar and footer
+import appendOrderSummary from "./scripts/orderSummary.js"
+import authenticate from "./scripts/loginauhentication.js";
+
+let header = document.getElementById("header");
+
+header.innerHTML = goodkartHeader();
+// import authenticate from "./scripts/loginauhentication.js";
+// authenticate();
+
+let category=document.getElementById("category");
+category.innerHTML=""
+category.style= "background-color: white;"
+
+let parent=document.getElementById("rightBox")
+let container=document.getElementById("container")
+
+let cartarr=JSON.parse(localStorage.getItem("cartArr"))||[];
+// console.log(typeof cartarr[2].strprice)
+
+let cartdiv=document.getElementById("cartdiv");
+
+let cartsize=document.createElement("div");
+cartsize.id="cartsize";
+cartsize.textContent=`${cartarr.length}`
+cartdiv.append(cartsize)
+
+function emptyCart(){
+    let div=document.createElement("div");
+    div.id="emptyCartBox";
+    div.style.backgroundImage="url('./images/cart is empty.png')"
+    div.style.backgroundPosition="center"
+    let p1=document.createElement("p");
+    p1.textContent="Your Cart is Empty"
+    p1.id="p1"
+    let p2=document.createElement("p");
+    p2.textContent="Add items to it now";
+    p2.id="p2"
+
+    
+    let button=document.createElement("button");
+    button.id="shopNow"
+    let a=document.createElement("a");
+    a.textContent="Shop Now";
+    a.href="goodkart.html";
+    button.append(a);
+    div.append(p1,p2,button);
+    container.append(div)
+}
+
+
+if(cartarr.length===0)
+{
+    emptyCart();
+    localStorage.setItem("payablePrice",0);
+}
+else{
+   
+
+    appendCart(cartarr)
+   
+    appendOrderSummary(parent,cartarr);
+    localStorage.setItem("payablePrice",JSON.stringify(appendOrderSummary(parent,cartarr)));
+}
+
+
+function appendCart(cartarr)
+{
+    let value;
+    
+    cartarr.map(function(el){
+        
+        let div=document.createElement("div");
+        let image=document.createElement("img");
+        image.src=el.img || el.image;
+        image.id="prodImg"
+        let name=document.createElement("div");
+        name.textContent=el.name;
+        name.id="prodName"
+        let price=document.createElement("div");
+        price.textContent="₹"+(el.price);
+        let firstPrice=el.price;
+        price.id="prodPrice";
+        let stprice=document.createElement("div");
+        stprice.textContent="₹"+( +el.stprice || +el.strprice);
+        let firstStprice= (+el.stprice || +el.strprice);
+        stprice.id="stprice";
+        let quantity=document.createElement("div");
+        quantity.textContent="Quantity"
+        quantity.id="quantity"
+        let select=document.createElement("select");
+        select.id="select"
+        let option1=document.createElement("option");
+        option1.textContent=1;
+        option1.value=1;
+        let option2=document.createElement("option");
+        option2.textContent=2;
+        option2.value=2;
+        let option3=document.createElement("option");
+        option3.textContent=3;
+        option3.value=3;
+        let option4=document.createElement("option");
+        option4.textContent=4;
+        option4.value=4;
+        let option5=document.createElement("option");
+        option5.textContent=5;
+        option5.value=5;
+        
+        select.addEventListener("change",saveValue);
+        function saveValue(event){
+            // localStorage.setItem('selectedtem', document.getElementById('select').value);
+            value=select.value
+            price.textContent="₹"+((+value)*(+firstPrice));
+            stprice.textContent="₹"+((+value)*(+firstStprice));
+            el.price=((+value)*(+firstPrice));
+        el.stprice=((+value)*(+firstStprice));
+        localStorage.setItem("cartArr",JSON.stringify(cartarr))
+        appendOrderSummary(parent,cartarr);
+        localStorage.setItem("payablePrice",JSON.stringify(appendOrderSummary(parent,cartarr)));
+        }
+        let button1=document.createElement("button");
+        button1.textContent="Remove";
+        button1.id="remove";
+        button1.addEventListener("click", remove);
+        function remove(event){
+            document.getElementById("leftBox").innerHTML="";
+            let index = cartarr.indexOf(el);
+            cartarr.splice(index,1)
+            // console.log(' cartarr', cartarr);
+            localStorage.setItem("cartArr",JSON.stringify(cartarr));
+            appendCart(cartarr);
+            window.location.href="viewcart.html";
+            if(cartarr.length==0)
+            {
+                emptyCart();
+                document.getElementById("rightBox").innerHTML=""
+            }
+        }
+        
+        
+        select.append(option1,option2,option3,option4,option5)
+        div.append(image,name,price,stprice,quantity,select,button1)
+        document.getElementById("leftBox").append(div)
+    })
+    let addDiv=document.createElement("div");
+    addDiv.id="addDiv";
+    let button2=document.createElement("button");
+    button2.textContent="Add More Products";
+     button2.id="button2";
+    button2.addEventListener("click",goodkart)
+     let button3=document.createElement("button");
+    button3.textContent="Proceed To Checkout";
+     button3.id="button3";
+     button3.addEventListener("click",address)
+
+     addDiv.append(button2,button3)
+    document.getElementById("leftBox").append(addDiv)
+}
+
+function goodkart(){
+    window.location.href="goodkart.html"
+}
+function address(){
+    window.location.href="address.html"
+}
+authenticate();
+
+</script>

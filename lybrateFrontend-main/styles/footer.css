@@ -1,0 +1,509 @@
+.card-footer {
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    text-align-last: right;
+    flex-direction: row;
+    flex: 1 0 0px;
+    width: auto;
+    max-width: 100%;
+    vertical-align: top;
+  }
+  .card-footer > span > i {
+    font-size: 16px;
+    margin: 5px;
+  }
+  #qna-btn {
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-weight: 600;
+    font-size: 16.5px;
+    padding: 16px;
+    border: 1px solid #dce0e0;
+    border-radius: 2px;
+    margin-top: 8px;
+    background: #fff;
+  }
+  .hoverable-qna-card > #form {
+    width: 550px;
+    border: 1px solid #c82506;
+    padding: 16px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0px;
+    max-width: 100%;
+    vertical-align: top;
+    position: relative;
+  }
+  #form-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  #form-header > div {
+    font-size: 16.5px;
+    padding-left: 4px;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  #form > textarea {
+    font-size: 14.5px;
+    padding: 8px;
+    resize: none;
+    line-height: 1.3;
+    height: 170px;
+    border: 1px solid #dce0e0;
+    box-shadow: none;
+    margin: 0;
+    outline: none;
+  }
+  
+  .form-footer {
+    height: 43px;
+    font-size: 12.5px;
+    background: #f7f7f7;
+    color: #6c6a6a;
+    padding: 4px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #footer-submit-btn {
+    height: 32px;
+    min-height: 32px;
+    line-height: 32px;
+    padding: 0 8px;
+    color: white;
+    background: red;
+    border: none;
+    cursor: pointer;
+    min-width: 88px;
+    padding: 0px 8px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+  }
+  .health-card {
+    background-color: #fff;
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .health-card-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .health-title {
+    position: relative;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .health-title > h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #222;
+    margin: 8px 0 4px;
+  }
+  .health-title > h6 {
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: normal;
+    color: #6c6a6a;
+  }
+  .health-img-cont {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 0 0 auto;
+    flex-direction: row;
+    vertical-align: top;
+  }
+  .health-img {
+    width: 55%;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+    vertical-align: top;
+  }
+  .feature-tip {
+    background: #444;
+    color: #eee;
+    padding: 16px;
+    margin-top: 4px;
+  }
+  .feature-tip > h3 {
+    font-size: 20px;
+    line-height: 1.33;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    text-transform: none;
+  }
+  .feature-tip > p {
+    padding: 4px 0;
+  }
+  .feature-footer {
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    flex: 0 0 auto;
+    vertical-align: top;
+  }
+  .feature-footer > a {
+    text-decoration: none;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    padding: 8px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  .feature-footer > span > span > i {
+    margin-right: 10px;
+  }
+  .health-card-left {
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    width: 45%;
+    position: relative;
+    vertical-align: top;
+  }
+  .health-card-tips {
+    overflow-y: auto;
+    flex: 1 0 0px;
+    width: auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    vertical-align: top;
+  }
+  .tip {
+    background: #444;
+    color: #eee;
+    padding: 24px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    flex: 0 0 auto;
+    position: relative;
+    vertical-align: top;
+  }
+  .tip > .profile-pic {
+    width: 60px;
+    padding-right: 8px;
+  }
+  .tip > .profile-pic > img {
+    height: 52px;
+    width: 52px;
+    border: none;
+    border-radius: 50%;
+  }
+  .tip > .profile-text {
+    width: calc(100% - 60px);
+    vertical-align: middle;
+    display: inline-block;
+  }
+  .tip > .profile-text > h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 4px;
+    text-transform: none;
+    margin: 0 0 4px 0;
+    padding: 0px;
+  }
+  #health-btn {
+    background-color: #444;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16.5px;
+    padding: 16px;
+    border: none;
+    margin-top: 8px;
+  }
+  .video-section {
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #eee;
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .video-title > h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #222;
+    margin: 8px 0 4px;
+  }
+  .video-title > h6 {
+    font-size: 18px;
+    line-height: 1.33;
+    font-weight: normal;
+    color: #6c6a6a;
+    margin-bottom: 10px;
+  }
+  .video-cards {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    position: relative;
+    vertical-align: top;
+  }
+  .videos-images {
+    display: flex;
+    justify-content: space-between;
+  }
+  .videos-images > img {
+    width: 24%;
+    object-fit: cover;
+  }
+  .info {
+    background-color: #fff;
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .info-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px !important;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+  .info-title {
+    font-weight: 600 !important;
+    font-size: 24.5px !important;
+    color: #222;
+  }
+  .info-content {
+    font-size: 18.5px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    margin-top: 16px;
+    color: #222;
+  }
+  .info-btn {
+    background-color: #c82506;
+    border: none;
+    color: #fff;
+    font-size: 16.5px;
+    cursor: pointer;
+    padding: 0 8px;
+    display: inline-block;
+    position: relative;
+    min-height: 36px;
+    line-height: 36px;
+    width: 160px;
+    padding: 0px 8px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+  }
+  .cateogary {
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #eee;
+  }
+  .cateogaries-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cateogaries-title {
+    padding: 0 8px;
+    position: relative;
+  }
+  .cateogaries-title > h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #222;
+    margin: 8px 0 4px;
+  }
+  .cateogaries-images {
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cateogaries-images > img {
+    width: 24%;
+    max-height: 123px;
+    object-fit: cover;
+  }
+  .cities-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 15px;
+  }
+  .cities-title {
+    padding: 0 8px;
+    position: relative;
+  }
+  .cities-title > h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #222;
+    margin: 8px 0 4px;
+  }
+  .cities-images {
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cities-images > img {
+    width: 24%;
+    max-height: 123px;
+    object-fit: cover;
+  }
+  .about {
+    padding: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .about-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .about-title {
+    font-weight: 600;
+    font-size: 20.5px;
+    color: #6c6a6a;
+  }
+  .about-content {
+    color: #6c6a6a;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .about-content > p {
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .footer {
+    display: block;
+    border-top: none;
+    background-color: #676767;
+    color: #fff;
+    padding: 0px 8px 16px 8px;
+    font-weight: 500;
+  }
+  .footer-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer .left {
+    float: left;
+    width: 78%;
+  }
+  .row-fluid {
+    width: 100%;
+  }
+  .footer .span3 {
+    float: left;
+    padding-top: 16px;
+    width: 25%;
+  }
+  .footer .section-title {
+    color: #ccc;
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+  li,
+  ul {
+    list-style-type: none;
+  }
+  .footer ul li {
+    margin-bottom: 3px;
+  }
+  .footer a {
+    color: #fff;
+    font-size: 13px;
+  }
+  .clear {
+    clear: both;
+  }
+  .footer .right {
+    float: left;
+    width: 22%;
+    padding-top: 16px;
+  }
+  .footer-outer {
+    padding-top: 20px !important;
+  }
+  .footer .footer-outer a {
+    font-size: 13px;
+    margin: 3px 10px 3px 0px;
+    display: inline-block;
+  }
+  
+  .social-icon > i {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+  }
+  .copyright {
+    font-size: 13px;
+    padding-top: 20px !important;
+  }
+  

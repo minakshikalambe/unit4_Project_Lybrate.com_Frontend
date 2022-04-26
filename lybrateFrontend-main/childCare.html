@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Baby Care Products Online At Best Prices In India | Lybrate</title>
+    <link rel="icon" sizes="192*192" href="https://nu.lybcdn.com/img/push-crew/logo_192_by_192.png">
+    <link rel="stylesheet" href="/styles/categoryPages.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="/styles/slider.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/styles/footer.css">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+
+        </header>
+        <div id="slider">
+
+        </div>
+        <div id="secondNav">
+            
+
+        </div>
+        <div id="content">
+            <!-- <div class="cardItem">
+                <div class="priceImageDiv">
+                    <img src="https://assets.lybrate.com/q_auto,f_auto,w_125,h_125,c_pad,b_white/rio/gangakshi/updt/g_cordial_v1.png"
+                        alt="">
+                    <div>
+                        <p>Gangakshi G Cordial Vedic Syrup 200ml</p>
+                        <div class="priceDiv">
+                            <p>₹160.00</p>
+                            <p>₹200.00</p>
+                        </div>
+                    </div>
+                </div>
+                <button>Add to Cart</button>
+            </div>-->
+
+
+
+        </div>
+
+
+
+
+
+        <div id="wellnessInfo">
+
+        </div>
+
+
+
+    </div>
+    <footer class="footer" id="footer"></footer>
+</body>
+
+</html>
+<script type="module">
+
+    import {goodkartHeader,slide,responsiveSlider} from "./components/goodkartHeaderAndSlider.js"
+
+import dropDown from "./scripts/dropDown.js";
+
+import secondNav from "./components/secondNavBar.js"
+
+import authenticate from "./scripts/loginauhentication.js";
+
+import {displayContent, sort} from "./scripts/categoryAppendSort.js"
+import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer();
+
+let cartArr=JSON.parse(localStorage.getItem("cartArr"))||[];
+
+
+
+let content = document.getElementById("content");
+
+let url = `https://apilybrate.herokuapp.com/childcareproducts`;
+
+async function getProducts() {
+  try {
+    let ChildCare = await fetchProducts(url); 
+    // console.log(ChildCare)
+    displayContent(ChildCare,content);
+  } catch (error) {
+    console.log(error);
+  }
+}
+getProducts();
+
+
+function fetchProducts(url) {
+    return fetch(url) 
+      .then(function (res) {
+        return res.json(); 
+      })
+      .then(function (res) {
+        return res; 
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
+
+
+let header = document.getElementById("header");
+
+header.innerHTML = goodkartHeader();
+
+
+let cartdiv=document.getElementById("cartdiv");
+console.log(cartArr.length)
+let cartsize=document.createElement("div");
+cartsize.id="cartsize";
+cartsize.textContent=`${cartArr.length}`
+cartdiv.append(cartsize);
+
+
+
+
+
+dropDown();
+
+
+
+let slider = async ()=>{
+    try{
+        let res = await fetch("https://apilybrate.herokuapp.com/sliders");
+        let data =await res.json();
+        return data
+
+    }catch(err){
+        console.log(err)
+    }
+}
+let sliderArr=await slider();
+
+let slide_div = document.getElementById("slider")
+
+slide(slide_div,sliderArr);
+
+responsiveSlider();
+
+
+document.getElementById("secondNav").innerHTML = secondNav("Child Care");
+
+document.getElementById("low").addEventListener("click", async function(){
+    let ChildCare = await fetchProducts(url);
+    sort("low", ChildCare,content)
+})
+
+document.getElementById("high").addEventListener("click", async function(){
+    let ChildCare = await fetchProducts(url);
+    sort("high",ChildCare,content)
+})
+
+document.getElementById("popular").addEventListener("click", async function(){
+    let ChildCare = await fetchProducts(url);
+    sort("p",ChildCare,content)
+})
+
+authenticate();
+
+    
+</script>

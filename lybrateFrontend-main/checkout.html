@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/checkout.css">
+    <script src="https://kit.fontawesome.com/4bcb279047.js" crossorigin="anonymous"></script>
+    <title>Payment Page</title>
+</head>
+<body>
+    <div>
+        <img src="./images/cashback.png" alt="">
+    </div>
+    <div id="container">
+        <div id="leftBox">
+            <div id="back">
+                <div onclick="abort"><i class="fas fa-arrow-left" id="arrowIcon"></i>Back</div>
+                <div>Lybrate</div>
+            </div>
+            <h2>Choose a payment option</h2>
+            <!-- <div>
+                Total Payable Amount 2000
+            </div>
+            <div></div> -->
+        </div>
+        <div id="rightBox">
+            <div id="paymentDiv">Payment Options</div>
+            <div id="options">
+                <div><a href="checkoutByCC.html"> (Credit/Debit)</a></div>
+                <div>
+                    <div>EMI</div>
+                    <div>CreditCard</div>
+                    </div>
+                <div>Wallet</div>
+                <div>Net Banking</div>
+                <div>UPI</div>
+                <div>HDFC Bank - PayZapp</div>
+                <div>
+                    <div>LazyPay</div>
+                    <div>Pay later with no extra cost</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    let payablePrice=localStorage.getItem("payablePrice");
+    console.log(payablePrice)
+    
+    let div=document.getElementById("leftBox");
+
+    let payable=document.createElement("div");
+    payable.textContent=`Total Payable Amount ₹${payablePrice}`
+    let id=Math.floor(Math.random() * (100000000 - 10000000) + 1000000)
+    let Transaction=document.createElement("div");
+    Transaction.textContent=`Transaction id ${id}`
+
+    localStorage.setItem("tid",id);
+    div.append(payable,Transaction)
+
+</script>

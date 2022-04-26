@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="192*192" href="https://nu.lybcdn.com/img/push-crew/logo_192_by_192.png">
+    <link rel="stylesheet" href="./styles/payment.css">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <script src="https://kit.fontawesome.com/4bcb279047.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>https://www.lybrate.com/viewcart#address</title>
+</head>
+<body>
+    <header id="header">
+
+    </header>
+
+    <div id="container">
+        <div id="leftBox">
+            <div id="address"><a href="address.html"><i class="fas fa-arrow-left" id="arrowIcon"></i></a>Payment details</div>
+            <div id="thanks"><div>We are experiencing a delay in the shipment as we are managing our teams and delivery partner for COVID-19 measures. Many thanks for cooperating.</div></div>
+            
+            <div id="payment_options"><div>PAYMENT OPTIONS</div></div>
+            <div id="bigBox">
+                <div id="your">Your available LybrateCash</div>
+                <div id="checkDiv">
+                    <div id="checkbox_Div">
+                        <div>
+                            <input type="checkbox" id="square">
+                        </div>
+                        <div>
+                            <div>Use your LybrateCash</div>
+                            <div id="cash1">You have LybrateCash and can redeem LybrateCash equivalent to % of the amount payable.</div>
+                            <div id="cash2">You have LybrateCash, Download Lybrate App to use your LybrateCash.</div>
+                        </div>
+                    </div>
+                    <div><span id="method">Payment method</span><span>(Choose any one)</span></div>
+                </div>
+                <div id="inputs">
+                    <input type="radio" name="radio" checked="checked"><i class="far fa-credit-card"></i><span>DebitCard/CreditCard/NetBanking/UPI</span>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/Paytm_logo.png" alt=""></span><span>PayTM Wallet</span>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/mobikwik.png" alt=""><span>Mobikwik Wallet</span>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/olamoney.png" alt=""><span>OlaMoney Postpaid</span>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/freecharge.png" alt=""><span>Freecharge</span>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/airtelmoney.png" alt=""><span class="airtel">Airtel Money</span><p id="airtel">Get up to ₹90 Cashback On Minimum Order Value ₹600</p>
+                    <br>
+                    <input type="radio" name="radio"><span  class="iconify" data-icon="fa-brands:cc-amazon-pay" style="color: #f99823;"></span><span>Amozon Pay</span>
+                    <br>
+                    <input type="radio" name="radio"><span class="iconify" data-icon="simple-icons:phonepe" style="color: #6739b7;"></span><span>PhonePe</span>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/cod.png" alt=""><span class="cod">COD Prime</span><i id="info" class="fas fa-info-circle"></i>
+                    <br>
+                    <input type="radio" name="radio"><img class="icon" src="https://assets.lybrate.com/q_auto,f_auto,w_46,h_46,c_pad/imgs/product/Homepage/cod.png" alt=""><span class="cod">Cash On Delivery(COD)</span>
+                    <div id="we">We urge you to consider online payment as cash notes can be a carrier for coronavirus infection.</div>
+                </div>
+                
+            </div>
+            <div id="buttonDiv">
+                <a href="address.html"><button id="button1">View Address Details</button></a>
+                <a href="checkout.html"><button id="button2">Proceed</button></a>
+            </div>
+        </div>
+        <div id="rightBox"></div>
+    </div>
+
+    <footer class="footer" id="footer"></footer>
+</body>
+</html>
+<script type="module">
+    import {goodkartHeader} from "./components/goodkartHeaderAndSlider.js"
+    
+    import appendOrderSummary from "./scripts/orderSummary.js"
+    
+    import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer();
+
+    import authenticate from "./scripts/loginauhentication.js";
+
+let header = document.getElementById("header");
+
+header.innerHTML = goodkartHeader();
+// import authenticate from "./scripts/loginauhentication.js";
+// authenticate();
+
+let category=document.getElementById("category");
+category.innerHTML=""
+category.style= "background-color: white;"
+
+authenticate();
+    let cartarr=JSON.parse(localStorage.getItem("cartArr"))||[];
+console.log(cartarr)
+
+    let cartdiv=document.getElementById("cartdiv");
+
+let cartsize=document.createElement("div");
+cartsize.id="cartsize";
+cartsize.textContent=`${cartarr.length}`
+cartdiv.append(cartsize)
+    let parent=document.getElementById("rightBox")
+    appendOrderSummary(parent,cartarr);
+</script>

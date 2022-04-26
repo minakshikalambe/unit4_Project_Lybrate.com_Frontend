@@ -1,0 +1,311 @@
+#container{
+    background-color: #eeeeee;
+    min-height: 400px;
+    border: 1px solid #eeeeee;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+}
+
+    #leftBox{
+        flex: 5;
+        margin-left: 80px;
+       margin-top: 50px;
+       
+    }
+#leftBox>div{
+    
+    display: flex;
+    border: 1px solid #eeeeee;
+    background-color: white;
+    min-height: 60px;
+}
+#emptyCartBox{
+    border: 1px solid black;
+    width: 50%;
+    height: 85%;
+    margin-right: 350px;
+    margin-top: 3%;
+    padding-bottom: 10px;
+}
+#shopNow{
+    margin: 0px 0px 0px 290px;
+    height: 40px;
+    width: 100px;
+    font-size: 18px;
+    background-color: #c82506;
+    border: none;
+    border-radius: 3px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#p1{
+    margin-top: 200px;
+    font-size: 24px;
+    font-weight:500;
+    text-align: center;
+    
+}
+#p2{
+    margin-top: -20px;
+    font-size: 18px;
+    text-align: center;
+}
+#prodImg{
+    width: 80px;
+    height: 50px;
+    margin: 15px 0px;
+    
+}
+#prodName{
+    margin-top: 25px;
+    width: 370px;
+    
+}
+#prodPrice{
+    color: #c82506;
+    margin-top: 25px;
+    font-size: 18px;
+    width: 60px;
+    /* border: 1px solid red; */
+}
+#stprice{
+    margin-top: 25px;
+    font-size: 14px;
+    margin-left: 5px;
+    /* border: 1px solid red; */
+    width: 60px;
+    text-decoration:line-through;
+}
+#quantity{
+    margin: 25px 10px 0px 70px;
+    font-size: 12px;
+    /* border: 1px solid red; */
+}
+#select{
+    height: 30px;
+    width: 35px;
+    border:none;
+    border-bottom: 1px solid #eeeeee;
+    margin-top: 22px;
+    outline: none;
+}
+#remove{
+    height: 25px;
+    margin: 25px;
+    background-color: white;
+    border: 1px solid;
+    cursor: pointer;
+    
+}
+#button2{
+    width: 170px;
+    height: 40px;
+    color: #c82506;
+    border: 1px solid #c82506;
+    background-color: white;
+    margin-left: 410px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+#button3{
+    height: 40px;
+    width: 180px;
+    background-color: #c82506;
+    border: none;
+    color: white;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+}
+#addDiv{
+    box-shadow: rgba(0, 0, 0, 0.32) 0px 1px 15px 0px;}
+/* ------------------------------right box---------------------------------------------- */
+
+
+#rightBox{
+    flex: 3;    
+}
+#maindiv{
+ height: 87%;
+ width: 75%;
+ margin-top: 50px;
+ margin-left: 20px;
+}
+#maindiv>div{
+    background-color: white;
+ padding-bottom: 10px;
+}
+#order{
+    padding:15px 15px ;
+}
+#order,#mrpBox,#payable{
+    border-bottom: 1px solid #b3acac;
+    
+}
+#mrpBox,#payable{
+    margin: 0px 15px;
+}
+#totalMrpDiv,#shipping,#dis,#cart1,#amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0px;
+}
+#mrpDiv{
+    display: flex;
+}
+#items{
+    color:#c82506
+}
+#amount{
+    font-size: 20px;
+}
+#image{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* ---------------------------navbar css------------------------------------------- */
+
+/*
+/* #header {
+    width: inherit;
+    /* border: 1px solid black; */
+    /* height: 5.5rem;
+    font-size: 14px;
+   
+}
+
+#navbar {
+    /* border: 1px solid red; */
+    /* height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 4.5rem; */
+    /* padding:  0px 10px;
+    padding: 0 4.5rem;
+    background-color: #ffffff; */
+/* } */ 
+
+
+
+/* #logo {
+    /* border: 1px solid red; 
+    width: fit-content;
+    margin-left: -90px;
+    margin-right: 90px;
+} 
+
+#logo>img {
+    height: 2.25rem;
+}
+
+#searchbar {
+    border: 1px solid green; 
+    width: 30rem;
+    height: 2.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    background-color: #dedede;
+
+}
+
+#search {
+    width: 92%;
+    height: 1.8rem;
+    margin: 0;
+    padding: 0px;
+    border: solid transparent;
+    background-color: #dedede
+}
+
+#search::placeholder {
+    color: rgb(165, 165, 165);
+    padding-left: 0.5rem;
+}
+
+#searchbar button,
+#searchbar i {
+    border: 0;
+    background-color: #dedede;
+    cursor: pointer;
+    
+}
+
+#signInDrop {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-left: 60px;
+    width: 130px;
+   
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 240px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1;
+    transform: translate(-60%,0%)
+    
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#signInDrop:hover .dropdown-content {
+    display: block;
+}
+#LybrateCash{
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+#LybrateCash>img{
+    margin-right:3px;
+}
+#homebtn>a>button{
+    background-color: white;
+    border: 1px solid;
+    padding: 2px 7px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 60px;
+}
+#cart{
+    color: #dd7764;
+    background: transparent;
+    margin-left: 60px;
+    margin-top: -5px;
+    
+}
+/* #cartsize{
+    border: 1px solid;
+    text-align: center;
+    width: 17px;
+    height: 17px;
+    background-color: #dd7764;
+    color: white;
+    border-radius: 50%;
+    margin: -40px 0px 0px 70px ;
+    
+} */ 
+
+
+

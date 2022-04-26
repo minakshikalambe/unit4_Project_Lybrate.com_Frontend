@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/address.css">
+    <link rel="icon" sizes="192*192" href="https://nu.lybcdn.com/img/push-crew/logo_192_by_192.png">
+    <script src="https://kit.fontawesome.com/4bcb279047.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <title>https://www.lybrate.com/viewcart#address</title>
+</head>
+<body>
+    <header id="header">
+
+    </header>
+    <div id="container">
+        <div id="leftBox">
+            <div id="address"><a href="viewcart.html"><i class="fas fa-arrow-left" id="arrowIcon"></i></a>Address details</div>
+            <div id="login"><span class="material-icons" id="checkboxIcon">check_box</span><div>LOGIN OR SIGNUP</div></div>
+            
+            <div id="verify">
+                <div id="two">2</div>
+                <div>ENTER OR VERIFY DETAILS</div>
+            </div>
+            <div id="text">
+                <div id="inputs">
+                <div class="flex">
+                    <div >
+                        <input class="input" type="text" placeholder="Name*" id="name">
+                        <div class="invalid" id="invalidName"></div>
+                    </div>
+                    <div>
+                        <input class="input" type="number" placeholder="Mobile*" id="number">
+                        <div class="invalid" id="invalidNumber"></div>
+                    </div>
+                    <div>
+                    <input class="input" type="text" placeholder="City*" id="city">
+                    <div class="invalid" id="invalidCity"></div>
+                    </div>
+                </div>
+                    <div class="flex">
+                    <div>
+                        <input class="input" type="number" placeholder="Pincode*" id="pin">
+                        <div class="invalid" id="invalidPin"></div>
+                    </div>
+                    <div>
+                        <input class="input" id="CompAdd" type="text" placeholder="Complete Address*">
+                        <div class="invalid" id="invalidAdd"></div>
+                    </div>
+                </div>
+                    <input class="radio" type="radio" value="Home" name="radio"><span class="radioText">Home</span>
+                    <input class="radio" type="radio" value="Office" name="radio"><span class="radioText">Office</span>
+                    <input class="radio" type="radio" value="Others" id="others" name="radio" checked="checked"><span class="radioText">Others</span>
+                    <a href="viewcart.html"><button id="button1">Cancel</button></a>
+                    <button id="button2">Save And Deliver Here</button>
+                </div>
+            </div>
+        </div>
+        <div id="rightBox">
+            
+           
+        </div>
+    </div>
+    <div id="footer" class="footer"></div>
+</body>
+</html>
+<script type="module">
+    import {goodkartHeader} from "./components/goodkartHeaderAndSlider.js"
+
+    
+    import footer from "./components/footer.js"
+    document.getElementById("footer").innerHTML=footer();
+// import navbar and footer here
+import appendOrderSummary from "./scripts/orderSummary.js";
+
+import authenticate from "./scripts/loginauhentication.js";
+
+let header = document.getElementById("header");
+
+header.innerHTML = goodkartHeader();
+// import authenticate from "./scripts/loginauhentication.js";
+// authenticate();
+
+let category=document.getElementById("category");
+category.innerHTML=""
+category.style= "background-color: white;"
+
+
+
+let cartarr=JSON.parse(localStorage.getItem("cartArr"))||[];
+console.log(cartarr)
+
+let cartdiv=document.getElementById("cartdiv");
+
+let cartsize=document.createElement("div");
+cartsize.id="cartsize";
+cartsize.textContent=`${cartarr.length}`
+cartdiv.append(cartsize)
+
+
+
+document.getElementById("button2").addEventListener("click",edit)
+document.getElementById("name").addEventListener("input",valid1)
+document.getElementById("number").addEventListener("input",valid2)
+document.getElementById("city").addEventListener("input",valid3)
+document.getElementById("pin").addEventListener("input",valid4)
+document.getElementById("CompAdd").addEventListener("input",valid5)
+function edit(){
+    let name=document.getElementById("name").value;
+    let number=document.getElementById("number").value;
+    let city=document.getElementById("city").value;
+    let pin=document.getElementById("pin").value;
+    let CompAdd=document.getElementById("CompAdd").value;
+    if(name=="")
+    {
+        let div1=document.getElementById("invalidName");
+        div1.textContent="Please enter a valid name"
+          
+    } 
+    else if(number=="" || number<1000000000 || number>9999999999)
+    {
+        let div1=document.getElementById("invalidNumber");
+        div1.textContent="Please enter a valid number"
+           
+    }   
+    else if(city=="")
+    {
+        let div1=document.getElementById("invalidCity");
+        div1.textContent="Please enter city"
+           
+    }   
+    else if(pin=="")
+    {
+        let div1=document.getElementById("invalidPin");
+        div1.textContent="Please enter a valid pincode"
+         
+    }   
+    else if(CompAdd=="")
+    {
+        let div1=document.getElementById("invalidAdd");
+        div1.textContent="Please enter delivery address" 
+    }
+    const radioButtons = document.querySelectorAll('input[class="radio"]');
+    let type;
+    for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                     type = radioButton.value;
+                    break;
+                }
+                 
+    }
+    console.log(' selectedSize', type);
+
+
+   if(name!=="" && number>=1000000000 && number<=9999999999 && city!=="" && pin!=="" && CompAdd!==""){
+      let userAddress={
+          name:name,
+          number:number,
+          city:city,
+          pin:pin,
+          CompAdd:CompAdd,
+          type:type
+      }
+      console.log(' userAddress', userAddress);
+      let text=document.getElementById("text")
+      text.innerHTML="";
+      appendAddress(userAddress);
+      
+   }
+}
+
+
+function valid1(){
+    document.getElementById("invalidName").innerHTML="";
+}
+function valid2(){
+    document.getElementById("invalidNumber").innerHTML="";
+}
+function valid3(){
+    document.getElementById("invalidCity").innerHTML="";
+}
+function valid4(){
+    document.getElementById("invalidPin").innerHTML="";
+}
+function valid5(){
+    document.getElementById("invalidAdd").innerHTML="";
+}
+
+function appendAddress(userAddress)
+{
+    let div=document.createElement("div");
+
+    let input1=document.createElement("input");
+    input1.type="radio";
+    input1.checked="checked";
+    input1.name="radio";
+    input1.id="input1";
+    let name=document.createElement("span");
+    name.textContent=userAddress.name;
+    name.id="username"
+    let type=document.createElement("span");
+    type.textContent=userAddress.type;
+    type.id="type";
+    let p1=document.createElement("p");
+    p1.textContent=userAddress.CompAdd;
+    p1.className="p"
+    let p2=document.createElement("p");
+    p2.textContent=userAddress.city;
+    p2.className="p"
+    let p3=document.createElement("p");
+    p3.textContent=userAddress.pin;
+    p3.className="p";
+
+    let button3=document.createElement("button");
+    button3.textContent="Edit";
+    button3.id="button3"
+    let button4=document.createElement("button");
+    button4.textContent="Deliver To This Address"
+    button4.addEventListener("click",deliver)
+    function deliver(){
+        window.location.href="payment.html"
+    }
+    button4.id="button4";
+    let buttons=document.createElement("div");
+    let box=document.createElement("div");
+    box.id="box";
+
+    let add=document.createElement("div");
+    add.id="add"
+    add.textContent="+ Add New Address"
+    buttons.append(button3,button4)
+
+    div.append(input1,name,type,p1,p2,p3,buttons);
+    box.append(div,add);
+    document.getElementById("text").append(box)
+}
+
+
+
+
+
+// let cartarr=JSON.parse(localStorage.getItem("cartArr"))||[];
+
+let parent=document.getElementById("rightBox")
+appendOrderSummary(parent,cartarr);
+
+authenticate();
+
+</script>

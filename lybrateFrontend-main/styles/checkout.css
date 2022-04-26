@@ -1,0 +1,54 @@
+body{
+    background-color: #f9f9f9;
+}
+body>div{
+    margin:auto;
+    width: 750px;
+    background-color: white;
+}
+#container{
+    display: flex;
+    height: 450px;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+#leftBox{
+    flex:4;
+    padding: 30px 30px 0px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    border-left: 5px solid #488cdc;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    
+}
+#rightBox{
+    flex:6;
+    padding-top: 30px;
+    overflow-y: scroll;
+}
+#back{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    
+    line-height: 40px;
+    font-size: 25px;
+}
+#paymentDiv{
+    margin-left: 40px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+#options>div{
+    border-bottom: 1px solid rgb(223, 217, 217);
+    height: 50px;
+    padding: 26px 0px 0px 40px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+i{
+    margin-right: 10px;
+}

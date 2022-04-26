@@ -1,0 +1,207 @@
+
+body {
+    margin: 0;
+    padding: 0px;
+    width: 100vw;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+
+#container {
+    /* border: 1px solid black; */
+    background-color: #eeeeee;
+    height: auto;
+
+    /* margin: 0 4.5rem; */
+}
+
+#secondNav {
+    /* border: 1px solid red; */
+    width: auto;
+    height: 95px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* padding-left: 20px; */
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    margin: 0 4.5rem;
+}
+
+#source,
+#sortDiv,
+#sortDiv>p:nth-child(1) {
+    /* border: 1px solid red; */
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    margin: 0;
+}
+
+#source>p {
+    padding-right: 5px;
+}
+
+#source>p,
+#sortDiv>p {
+    padding-bottom: 5px;
+    font-size: small;
+    margin: 5px 0px;
+}
+
+#secondNav>h5 {
+    margin: 5px 0px;
+    padding-left: 20px;
+    /* border: 1px solid yellowgreen; */
+}
+
+#sortDiv>p {
+    margin: 0 50px;
+    padding-top: 10px;
+}
+
+#sortDiv>p:nth-child(1) {
+    margin-left: -20px;
+}
+
+#sortDiv>p:nth-child(2),
+#sortDiv>p:nth-child(3):hover,
+#sortDiv>p:nth-child(4):hover {
+    color: #c82506;
+    border-bottom: 2px solid #c82506;
+    cursor: pointer;
+}
+
+#source>p:nth-child(1),
+#source>p:nth-child(3) {
+    color: #c82506;
+
+    cursor: pointer;
+
+}
+
+#content {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 0 4.5rem;
+    /* border: 1px solid green; */
+    margin-top: 1px;
+    padding: 20px;
+    background-color: white;
+}
+
+.cardItem {
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    height: 280px;
+}
+
+.priceImageDiv {
+    display: flex;
+}
+
+.priceImageDiv>img {
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.priceImageDiv>div {
+    margin-left: 20px;
+}
+
+.priceImageDiv>div>p:nth-child(1) {
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    font-weight: 700;
+    font-size: 110%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+
+.priceImageDiv>div>p:nth-child(2) {
+    /* border: 1px solid red; */
+    font-size: medium;
+    line-height: 140%;
+    width: 90%;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.priceDiv {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.priceDiv>p {
+    margin-right: 30px;
+    color: red;
+    font-size: large;
+    font-weight: 700;
+}
+
+.priceDiv>s {
+    font-size: small;
+    color: gray
+}
+
+.cardItem button {
+    margin-left: 70%;
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    border: 1px solid red;
+    margin-bottom: 3%;
+    cursor: pointer;
+    background-color: #c82506;
+    color: #ffffff;
+    font-weight: 700;
+
+}
+#wellnessInfo{
+    padding: 0 4.5rem;
+}
+
+#disclaimer {
+    word-break: break-word;
+    line-height: 16px;
+    padding: 16px 0 0 0;
+    color: #9a9b9f;
+    font-size: 12px !important;
+}
+th{
+    background-color: rgb(201, 201, 201);
+}
+thead th:nth-child(1){
+    text-align: left;
+    padding-left: 10px;
+}
+tbody>tr td:nth-child(1){
+    padding-left: 10px;
+}
+ th, td{
+    border: 1px solid;
+    height: 30px;
+}
+.center{
+    text-align: center;
+}

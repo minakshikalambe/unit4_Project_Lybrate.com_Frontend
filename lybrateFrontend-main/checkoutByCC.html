@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/checkoutByCC.css" />
+    <script
+      src="https://kit.fontawesome.com/4bcb279047.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Payment Page</title>
+  </head>
+  <body>
+    <span id="icon" class="fa-3x"> </span>
+    <div>
+      <img src="./images/cashback.png" alt="" />
+    </div>
+    <div id="container">
+      <div id="leftBox">
+        <div id="back">
+          <a href="checkout.html"
+            ><div><i class="fas fa-arrow-left" id="arrowIcon"></i>Back</div></a
+          >
+          <div>Lybrate</div>
+        </div>
+        <h2>Enter new card</h2>
+      </div>
+      <div id="rightBox">
+        <div id="paymentDiv">CARDS (CREDIT/DEBIT)</div>
+        <div id="detailsDiv">
+          <div>New Card</div>
+          <input
+            class="type"
+            type="number"
+            placeholder="Enter Card Number"
+            id="card"
+          />
+          <div id="cvv">
+            <div>Expiry</div>
+            <div>CVV</div>
+          </div>
+          <input type="text" placeholder="MM/YY" class="cvv" id="expiry" />
+          <input
+            type="number"
+            placeholder="Enter CVV"
+            class="cvv"
+            id="cvvValue"
+          />
+          <div>Name on Card</div>
+          <input
+            class="type"
+            type="text"
+            placeholder="Enter name as on card"
+            id="name"
+          />
+          <div id="otpDiv"></div>
+          <br />
+          <input id="checkbox" type="checkbox" /><span id="text"
+            >Save this option securely for faster payment</span
+          >
+          <button id="button" onclick="proceed()">PROCEED</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  let cartarr = JSON.parse(localStorage.getItem("cartArr")) || [];
+  console.log(cartarr);
+  let data;
+  let c=0;
+  async function proceed() {
+    try {
+
+      let otpInput = document.getElementById("otp");
+
+      if (!otpInput) {
+        alert("Check your registered email for one time password.")
+        otpInput = document.createElement("input");
+        otpInput.type = "number";
+        otpInput.placeholder = "Enter Otp";
+        otpInput.id = "otp";
+        otpInput.className="type"
+        document.getElementById("otpDiv").append(otpInput);
+
+        let url = "https://apilybrate.herokuapp.com/checkoutOtpMail";
+
+        let res = await fetch(url, { method: "POST" });
+        data = await res.json();
+      } else {
+
+        let otpEntered = otpInput.value;
+        if (data.otp != otpEntered) {
+          c++;
+          if(c==1)
+          {
+            alert("Incorrect OTP Entered! 2 chances left, Please Enter Correct OTP");
+          }
+          else if(c==2)
+          {
+            alert("Incorrect OTP Entered! 1 chance left, Please Enter Correct OTP");
+          }
+          else if(c===3)
+          {
+            c=0;
+            alert("Incorrect OTP Entered! Transaction failed, Try again");
+            window.location.href="checkoutByCC.html"
+          }
+        } else {
+          let card = document.getElementById("card").value;
+          let expiry = document.getElementById("expiry").value;
+          let cvvValue = document.getElementById("cvvValue").value;
+          let name = document.getElementById("name").value;
+
+          if (card == "" || expiry == "" || cvvValue == "" || name == "") {
+            console.log("empty");
+          }
+          if (card !== "" && expiry !== "" && cvvValue !== "" && name !== "") {
+            let div = document.getElementById("icon");
+
+            let icon = document.createElement("i");
+            icon.className = "fas fa-spinner fa-spin";
+            div.append(icon);
+            async function test() {
+              let url = "https://apilybrate.herokuapp.com/finalMail";
+              let res = await fetch(url, { method: "POST" });
+              data = await res.json();
+              alert("Hurray! your order has been successfully placed.");
+              cartarr = [];
+              localStorage.setItem("cartArr", JSON.stringify(cartarr));
+              
+              window.location.href = "goodkart.html";
+            }
+
+            setTimeout(test, 3000);
+          }
+        }
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  let payablePrice = localStorage.getItem("payablePrice");
+  let id = localStorage.getItem("tid");
+  let div = document.getElementById("leftBox");
+
+  let payable = document.createElement("div");
+  payable.textContent = `Total Payable Amount ₹${payablePrice}`;
+
+  let Transaction = document.createElement("div");
+  Transaction.textContent = `Transaction id ${id}`;
+  div.append(payable, Transaction);
+
+</script>
